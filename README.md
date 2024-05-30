@@ -1,6 +1,4 @@
 # GetUserByID Получить профиль из ID пользователя. V1.2
-Get all the information about videos/photos from TikTok and direct links to them in 1 line of code using the SSSTik.io scraper script
-And also an example of a telegram bot for downloading from TikTok :3
 
 ## Возможности
 1. Получение ссылок на профиль по ID. (Не работает на компьютерной и браузерной версии).
