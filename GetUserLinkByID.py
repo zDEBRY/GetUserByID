@@ -1,9 +1,28 @@
+import os
+import configparser
 import telebot
-# Введите сюда токен бота, пример 11111111:AAAAAAAAAAAA
-API_TOKEN = '___'
+
+CONFIG_FILE = 'config.ini'
+config = configparser.ConfigParser()
+
+if not os.path.exists(CONFIG_FILE):
+    API_TOKEN = input("Введите токен бота: (API_TOKEN): ")
+    CHANNEL_ID = input("Введите ID канала со знаком @: (CHANNEL_ID): ")
+    config['settings'] = {
+        'API_TOKEN': API_TOKEN,
+        'CHANNEL_ID': CHANNEL_ID
+    }
+    with open(CONFIG_FILE, 'w') as configfile:
+        config.write(configfile)
+else:
+    config.read(CONFIG_FILE)
+    API_TOKEN = config['settings']['API_TOKEN']
+    CHANNEL_ID = config['settings']['CHANNEL_ID']
+
+if not API_TOKEN or not CHANNEL_ID:
+    raise ValueError("API_TOKEN и CHANNEL_ID должны быть установлены.")
+
 bot = telebot.TeleBot(API_TOKEN)
-# Введите сюда канал username, пример @Example
-CHANNEL_ID = '___'
 
 def is_subscribed(user_id):
     try:
