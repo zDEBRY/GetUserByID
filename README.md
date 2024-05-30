@@ -11,7 +11,7 @@ cd GetUserByID
 ```
 ## Скачиваем библиотеки:
 ```
-pip install telebot
+pip install telebot configparser
 ```
 
 ## Запускаем скрипт:
