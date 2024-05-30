@@ -9,7 +9,15 @@
 git clone https://github.com/zDEBRY/GetUserByID
 cd GetUserByID
 ```
-
+## Меняем токен и id
+Получаем токен у @BotFather
+```
+set API_TOKEN=ВАШ_ТОКЕН
+```
+Создаём канал и вводим @username канала
+```
+set CHANNEL_ID=ВАШ_КАНАЛ
+```
 ## Скачиваем библиотеки:
 ```
 pip install telebot
